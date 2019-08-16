@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_users_form_view" model="ir.ui.view">
+        <field name="name">res.users.form.view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="before">
+                <field name="wise_orders"/>
+                <field name="wise_config"/>
+                <field name="config_id" attrs="{'invisible': [('wise_config', '=', False)], 'required': [('wise_config', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
