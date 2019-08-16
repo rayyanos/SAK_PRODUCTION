@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pos_default_customer_inherit">
+            <field name="name">pos.default.customer.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"></field>
+          <!--Inherited view of the POS Configuration and add Field -->
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside">
+                    <h2>POS Default customer configuration </h2>
+                    <group col="2">
+                        <field name="pos_default_cust"/>
+                   </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
